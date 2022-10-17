@@ -1,5 +1,6 @@
 import streamlit as st
 from databricks import sql
+import pandas as pd
 import os
 
 @st.experimental_singleton
