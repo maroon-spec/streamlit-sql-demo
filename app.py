@@ -19,9 +19,9 @@ def run_query(query):
         return cur.fetchall()
 
 rows = run_query("select Origin, count(*) as count from small_table group by Origin")
-df = pd.DataFrame(rows, header=True)
+df = pd.DataFrame(rows)
 
 # Print results.
 st.dataframe(df)
 
-st.bar_chart(data=df, x=0, y=1, width=0, height=0, use_container_width=True)
+#st.bar_chart(data=df, x=0, y=1, width=0, height=0, use_container_width=True)
