@@ -25,4 +25,4 @@ df = pd.DataFrame(rows, columns=["Origin","count"])
 # Print results.
 st.dataframe(df)
 
-#st.bar_chart(data=df, x=0, y=1, width=0, height=0, use_container_width=True)
+st.bar_chart(data=df, x="Origin", y="count", width=0, height=0, use_container_width=True)
