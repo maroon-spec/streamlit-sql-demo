@@ -19,12 +19,15 @@ def run_query(query):
         cur.execute(query)
         return cur.fetchall()
 
-rows = run_query("select Origin, count(*) as count from small_table group by Origin")
-df = pd.DataFrame(rows, columns=["Origin","count"])
 
 # Print results.
 st.title("Streamlit & Databricks Demo")
 st.subheader("Databricks SQL Connectorを使って、Databricksのデータにアクセスする")
 
+full = run_query("select * from small_table limit 5")
+st.table(full)
+
+rows = run_query("select Origin, count(*) as count from small_table group by Origin")
+df = pd.DataFrame(rows, columns=["Origin","count"])
 st.bar_chart(data=df, x="Origin", y="count", width=0, height=0, use_container_width=True)
-st.dataframe(df)
+#st.dataframe(df)
