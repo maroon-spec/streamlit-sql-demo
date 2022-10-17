@@ -24,7 +24,7 @@ df = pd.DataFrame(rows, columns=["Origin","count"])
 
 # Print results.
 st.title("Streamlit & Databricks Demo")
-st.header("Databricks SQL Connectorを使って、Databricksのデータにアクセスする")
+st.subheader("Databricks SQL Connectorを使って、Databricksのデータにアクセスする")
 
-st.dataframe(df)
 st.bar_chart(data=df, x="Origin", y="count", width=0, height=0, use_container_width=True)
+st.dataframe(df)
