@@ -21,8 +21,8 @@ def run_query(query):
 
 def get_column(query):
     with conn.cursor() as cur:
-    cur.columns(schema_name="default", table_name="small_table")
-    return cur.fetchall()
+        cur.columns(schema_name="default", table_name="small_table")
+        return cur.fetchall()
 
 # Print results.
 st.title("Streamlit & Databricks Demo")
