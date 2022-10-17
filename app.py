@@ -19,7 +19,7 @@ def run_query(query):
         cur.execute(query)
         return cur.fetchall()
 
-def get_column(query):
+def get_column():
     with conn.cursor() as cur:
         cur.columns(schema_name="default", table_name="small_table")
         return cur.fetchall()
@@ -29,7 +29,7 @@ st.title("Streamlit & Databricks Demo")
 st.subheader("Databricks SQL Connectorを使って、Databricksのデータにアクセスする")
 
 full = run_query("select * from small_table limit 5")
-df = pd.DataFrame(full, columns=get_column)
+df = pd.DataFrame(full, columns=get_column())
 st.table(df)
 
 rows = run_query("select Origin, count(*) as count from small_table group by Origin")
