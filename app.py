@@ -22,4 +22,4 @@ rows = run_query("SELECT * FROM default.nyctaxi_yellow LIMIT 2;")
 
 # Print results.
 for row in rows:
-    st.write(f"{row[0]} has a :{row[1]}:")
+    st.write(rows)
