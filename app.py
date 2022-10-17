@@ -21,5 +21,4 @@ def run_query(query):
 rows = run_query("SELECT * FROM default.nyctaxi_yellow LIMIT 2;")
 
 # Print results.
-for row in rows:
-    st.write(rows)
+st.write(rows)
