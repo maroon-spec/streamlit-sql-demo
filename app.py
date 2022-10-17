@@ -23,4 +23,4 @@ rows = run_query("SELECT * FROM default.nyctaxi_yellow LIMIT 10;")
 # Print results.
 st.dataframe(rows)
 
-st.line_chart(data=rows, x=1, y=4, width=0, height=0, use_container_width=True)
+st.line_chart(data=rows, x=2, y=4, width=0, height=0, use_container_width=True)
