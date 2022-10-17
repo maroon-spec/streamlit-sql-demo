@@ -24,7 +24,7 @@ st.title("Streamlit & Databricks Demo")
 st.subheader("Databricks SQL Connectorを使って、Databricksのデータにアクセスする")
 
 full = run_query("select * from small_table limit 5")
-df = pd.DataFrame(full, full.columns())
+df = pd.DataFrame(full, columns=full.columns)
 st.table(df)
 
 rows = run_query("select Origin, count(*) as count from small_table group by Origin")
