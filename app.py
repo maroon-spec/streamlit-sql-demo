@@ -5,9 +5,9 @@ import os
 @st.experimental_singleton
 def init_connection():
     return sql.connect(
-        server_hostname = DATABRICKS_SERVER_HOSTNAME,
-        http_path       = DATABRICKS_HTTP_PATH,
-        access_token    = DATABRICKS_TOKEN)
+        server_hostname = st.secrets["DATABRICKS_SERVER_HOSTNAME"],
+        http_path       = st.secrets["DATABRICKS_HTTP_PATH"],
+        access_token    = st.secrets["DATABRICKS_TOKEN"])
 
 conn = init_connection()
 
