@@ -23,6 +23,7 @@ rows = run_query("select Origin, count(*) as count from small_table group by Ori
 df = pd.DataFrame(rows, columns=["Origin","count"])
 
 # Print results.
+st.title("StreamlitからDatabricksに接続してデータを取得するデモ")
 st.dataframe(df)
 
 st.bar_chart(data=df, x="Origin", y="count", width=0, height=0, use_container_width=True)
