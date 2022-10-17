@@ -21,6 +21,6 @@ def run_query(query):
 rows = run_query("select Origin, count(*) as count from small_table group by Origin")
 
 # Print results.
-st.dataframe(rows)
+st.dataframe(rows,header="true")
 
 st.bar_chart(data=rows, x=0, y=1, width=0, height=0, use_container_width=True)
