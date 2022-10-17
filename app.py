@@ -20,7 +20,7 @@ def run_query(query):
         return cur.fetchall()
 
 rows = run_query("select Origin, count(*) as count from small_table group by Origin")
-df = pd.DataFrame(rows, column=["Origin","count"])
+df = pd.DataFrame(rows, columns=["Origin","count"])
 
 # Print results.
 st.dataframe(df)
